@@ -7,16 +7,28 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <footer>
-      Coded by
-      <a href="https://github.com/HaideeAC" target="_blank">Haidee</a>
-      , is hosted on
-      <a href="https://github.com/HaideeAC/weather-app-remake" target="_blank"
-        >GitHub</a
-      >
-      and
-      <a href="https://haweatherapp.netlify.app" target="_blank">Netlify</a>
-    </footer>
+    <div class="wrapper">
+      <div class="allBox">
+        <div class="searchBox">
+          <form action="">
+            <input type="text" id="inputbox" placeholder="Enter city.." />
+            <input type="submit" id="inputbutton" value="Search" />
+          </form>
+        </div>
+        <div class="weatherBox"></div>
+        <div class="forecastBox"></div>
+      </div>
+      <footer>
+        Coded by
+        <a href="https://github.com/HaideeAC" target="_blank">Haidee</a>
+        , is hosted on
+        <a href="https://github.com/HaideeAC/weather-app-remake" target="_blank"
+          >GitHub</a
+        >
+        and
+        <a href="https://haweatherapp.netlify.app" target="_blank">Netlify</a>
+      </footer>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>

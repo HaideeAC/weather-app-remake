@@ -1,5 +1,5 @@
 body {
-  background: rgb(195, 152, 152);
+  background: rgb(247, 241, 229);
   height: 100vh;
   margin: 0;
   display: flex;
@@ -8,6 +8,7 @@ body {
 }
 
 .wrapper {
+  color: rgb(76, 75, 22);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,11 +26,20 @@ body {
 }
 
 .searchBox {
-  border: 1px solid white;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 5px rgb(195, 152, 152);
 }
 
 .weatherBox {
-  border: 1px solid white;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+a {
+  color: rgb(137, 129, 33);
 }
 
 .hourlyTemp {
@@ -39,11 +49,21 @@ body {
 }
 
 .forecastBox {
-  border: 1px solid white;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
 }
 
 .dailyTemp {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.higherTemp {
+  color: rgb(137, 129, 33);
+}
+
+.lowerTemp {
+  color: rgb(231, 177, 10);
 }

@@ -1,0 +1,8 @@
+body {
+  background: rgb(195, 152, 152);
+}
+
+.wrapper {
+  width: 600px;
+  border: 1px solid white;
+}

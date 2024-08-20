@@ -45,6 +45,12 @@ body {
   border: 1px solid rgb(76, 75, 22);
 }
 
+input[type="text"] {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
 .inputButton {
   font-family: "Chakra Petch", sans-serif;
   font-weight: 300;

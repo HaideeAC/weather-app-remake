@@ -79,10 +79,24 @@ input[type="text"] {
   justify-content: space-between;
 }
 
-.box4 {
-  font-size: 70px;
+.infobox2 {
+  display: flex;
 }
 
+.infobox2icon {
+  font-size: 44px;
+  margin-top: 20px;
+}
+.infobox2temp {
+  font-size: 88px;
+  font-weight: 400;
+  margin-left: 15px;
+}
+.infobox2unit {
+  font-size: 44px;
+  font-weight: 600;
+  margin-top: 14px;
+}
 .hourlyTemp {
   display: flex;
   flex-direction: row;

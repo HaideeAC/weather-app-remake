@@ -67,10 +67,14 @@ body {
   justify-content: space-between;
 }
 
+.box4 {
+  font-size: 70px;
+}
+
 .hourlyTemp {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .forecastBox {

@@ -3,6 +3,10 @@ function searchCity(city) {
   axios.get(apiUrl).then(function refreshWeather(response) {
     let currentTemp = document.querySelector("#current-temp");
     currentTemp.innerHTML = Math.round(response.data.temperature.current);
+    let currentHumidity = document.querySelector("#humidity");
+    currentHumidity.innerHTML = response.data.temperature.humidity;
+    let currentWind = document.querySelector("#wind");
+    currentWind.innerHTML = response.data.wind.speed;
   });
 }
 

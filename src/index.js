@@ -7,6 +7,8 @@ function searchCity(city) {
     currentHumidity.innerHTML = response.data.temperature.humidity;
     let currentWind = document.querySelector("#wind");
     currentWind.innerHTML = response.data.wind.speed;
+    let cityElement = document.querySelector("#city");
+    cityElement.innerHTML = response.data.city;
   });
 }
 
@@ -14,8 +16,7 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", function (event) {
   event.preventDefault();
   let searchBox = document.querySelector("#input-box");
-  let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = searchBox.value;
+
   searchCity(searchBox.value);
 });
 

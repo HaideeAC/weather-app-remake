@@ -18,3 +18,22 @@ searchForm.addEventListener("submit", function (event) {
   cityElement.innerHTML = searchBox.value;
   searchCity(searchBox.value);
 });
+
+let now = new Date();
+
+let date = document.querySelector("#date");
+
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+let hour = now.getHours();
+let minutes = now.getMinutes().toString().padStart(2, "0");
+
+date.innerHTML = `${day} ${hour}:${minutes}`;

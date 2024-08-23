@@ -11,6 +11,12 @@ function searchCity(city) {
     cityElement.innerHTML = response.data.city;
     let description = document.querySelector("#descr");
     description.innerHTML = response.data.condition.description;
+    let icon = document.querySelector("#mainIcon");
+    icon.innerHTML = `<img
+                  src="${response.data.condition.icon_url}"
+                  alt=""
+                  class="infobox2icon"
+                />`;
   });
 }
 

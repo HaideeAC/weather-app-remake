@@ -83,13 +83,13 @@ input[type="text"] {
 }
 
 .infobox2icon {
-  font-size: 44px;
-  margin-top: 20px;
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
 }
 .infobox2temp {
   font-size: 88px;
   font-weight: 400;
-  margin-left: 15px;
 }
 .infobox2unit {
   font-size: 44px;

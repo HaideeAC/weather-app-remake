@@ -1,5 +1,5 @@
 function searchCity(city) {
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=9453eocfb302f861c59f1e9f04d3bta4`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=9453eocfb302f861c59f1e9f04d3bta4&units=metric`;
   axios.get(apiUrl).then(function refreshWeather(response) {
     let currentTemp = document.querySelector("#current-temp");
     currentTemp.innerHTML = Math.round(response.data.temperature.current);
@@ -28,8 +28,6 @@ searchForm.addEventListener("submit", function (event) {
   searchCity(searchBox.value);
 });
 
-searchCity("London");
-
 let now = new Date();
 
 let date = document.querySelector("#date");
@@ -50,8 +48,11 @@ let minutes = now.getMinutes().toString().padStart(2, "0");
 date.innerHTML = `${day} ${hour}:${minutes}`;
 
 //forecast
+function getForecast(city) {
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=9453eocfb302f861c59f1e9f04d3bta4&units=metric`;
+  axios.get(apiUrl).then(function displayForecast(response) {
+  console.log(response);
 
-function displayForecast() {
   let forecast = document.querySelector("#forecast");
 
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -60,20 +61,21 @@ function displayForecast() {
     forecastHtml =
       forecastHtml +
       `<div class="forecast-daily">
-  <div class="forecast-weekday">${day}</div>
-  <div class="forecast-icon">☀️</div> 
-  <div class="forecast-temperatures"
-  <div class="higherTemp">
+    <div class="forecast-weekday">${day}</div>
+    <div class="forecast-icon">☀️</div> 
+    <div class="forecast-temperatures"
+    <div class="higherTemp">
     29º 
     <span class="lowerTemp"> 19º</span></div>
-  </div>
-</div>`;
+    </div>
+    </div>`;
   });
 
   forecast.innerHTML = forecastHtml;
+});
 }
 
-displayForecast();
+
 
 // let hour1 = document.querySelector("#hourly1");
 // let hours1 = hour + 3;
@@ -94,3 +96,6 @@ displayForecast();
 // let hour5 = document.querySelector("#hourly5");
 // let hours5 = hour + 15;
 // hour5.innerHTML = `${hours5}:00`;
+
+searchCity("London");
+getForecast("London");

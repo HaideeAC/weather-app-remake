@@ -39,27 +39,24 @@ let minutes = now.getMinutes().toString().padStart(2, "0");
 
 date.innerHTML = `${day} ${hour}:${minutes}`;
 
-//next hours
 let hour1 = document.querySelector("#hourly1");
-let hours1 = now.setHours(now.getHours() + 3);
+let hours1 = hour + 3;
 hour1.innerHTML = `${hours1}:00`;
 
 let hour2 = document.querySelector("#hourly2");
-let hours2 = now.setHours(now.getHours() + 6);
+let hours2 = hour + 6;
 hour2.innerHTML = `${hours2}:00`;
 
 let hour3 = document.querySelector("#hourly3");
-let hours3 = now.setHours(now.getHours() + 9);
+let hours3 = hour + 9;
 hour3.innerHTML = `${hours3}:00`;
 
 let hour4 = document.querySelector("#hourly4");
-let hours4 = now.setHours(now.getHours() + 12);
+let hours4 = hour + 12;
 hour4.innerHTML = `${hours4}:00`;
 
 let hour5 = document.querySelector("#hourly5");
-let hours5 = now.setHours(now.getHours() + 15);
+let hours5 = hour + 15;
 hour5.innerHTML = `${hours5}:00`;
 
-//next days
-let days1 = document.querySelector("#daily1")
-let day1 = 
+//let shortDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];

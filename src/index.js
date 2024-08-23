@@ -9,6 +9,8 @@ function searchCity(city) {
     currentWind.innerHTML = response.data.wind.speed;
     let cityElement = document.querySelector("#city");
     cityElement.innerHTML = response.data.city;
+    let description = document.querySelector("#descr");
+    description.innerHTML = response.data.condition.description;
   });
 }
 

@@ -28,6 +28,8 @@ searchForm.addEventListener("submit", function (event) {
   searchCity(searchBox.value);
 });
 
+searchCity("London");
+
 let now = new Date();
 
 let date = document.querySelector("#date");

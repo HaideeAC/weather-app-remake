@@ -49,24 +49,48 @@ let minutes = now.getMinutes().toString().padStart(2, "0");
 
 date.innerHTML = `${day} ${hour}:${minutes}`;
 
-let hour1 = document.querySelector("#hourly1");
-let hours1 = hour + 3;
-hour1.innerHTML = `${hours1}:00`;
+//forecast
 
-let hour2 = document.querySelector("#hourly2");
-let hours2 = hour + 6;
-hour2.innerHTML = `${hours2}:00`;
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
 
-let hour3 = document.querySelector("#hourly3");
-let hours3 = hour + 9;
-hour3.innerHTML = `${hours3}:00`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="forecast-daily">
+  <div class="forecast-weekday">${day}</div>
+  <div class="forecast-icon">☀️</div> 
+  <div class="forecast-temperatures"
+  <div class="higherTemp">
+    29º 
+    <span class="lowerTemp"> 19º</span></div>
+  </div>
+</div>`;
+  });
 
-let hour4 = document.querySelector("#hourly4");
-let hours4 = hour + 12;
-hour4.innerHTML = `${hours4}:00`;
+  forecast.innerHTML = forecastHtml;
+}
 
-let hour5 = document.querySelector("#hourly5");
-let hours5 = hour + 15;
-hour5.innerHTML = `${hours5}:00`;
+displayForecast();
 
-//let shortDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+// let hour1 = document.querySelector("#hourly1");
+// let hours1 = hour + 3;
+// hour1.innerHTML = `${hours1}:00`;
+
+// let hour2 = document.querySelector("#hourly2");
+// let hours2 = hour + 6;
+// hour2.innerHTML = `${hours2}:00`;
+
+// let hour3 = document.querySelector("#hourly3");
+// let hours3 = hour + 9;
+// hour3.innerHTML = `${hours3}:00`;
+
+// let hour4 = document.querySelector("#hourly4");
+// let hours4 = hour + 12;
+// hour4.innerHTML = `${hours4}:00`;
+
+// let hour5 = document.querySelector("#hourly5");
+// let hours5 = hour + 15;
+// hour5.innerHTML = `${hours5}:00`;

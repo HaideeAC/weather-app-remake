@@ -61,3 +61,4 @@ let hours5 = now.getHours() + 15;
 hour5.innerHTML = `${hours5}:00`;
 
 //next days
+let days1 = document.querySelector()

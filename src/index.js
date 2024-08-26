@@ -17,6 +17,7 @@ function searchCity(city) {
                   alt=""
                   class="infobox2icon"
                 />`;
+    getForecast(response.data.city);
   });
 }
 
@@ -51,31 +52,29 @@ date.innerHTML = `${day} ${hour}:${minutes}`;
 function getForecast(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=9453eocfb302f861c59f1e9f04d3bta4&units=metric`;
   axios.get(apiUrl).then(function displayForecast(response) {
-  console.log(response);
+    console.log(response.data.daily);
 
-  let forecast = document.querySelector("#forecast");
+    let forecast = document.querySelector("#forecast");
 
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  let forecastHtml = "";
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `<div class="forecast-daily">
-    <div class="forecast-weekday">${day}</div>
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let forecastHtml = "";
+    response.data.daily.forEach(function (day) {
+      forecastHtml =
+        forecastHtml +
+        `<div class="forecast-daily">
+    <div class="forecast-weekday">XxX</div>
     <div class="forecast-icon">☀️</div> 
     <div class="forecast-temperatures"
     <div class="higherTemp">
-    29º 
-    <span class="lowerTemp"> 19º</span></div>
+    ${Math.round(day.temperature.maximum)}º 
+    <span class="lowerTemp">${Math.round(day.temperature.minimum)}º</span></div>
     </div>
     </div>`;
+    });
+
+    forecast.innerHTML = forecastHtml;
   });
-
-  forecast.innerHTML = forecastHtml;
-});
 }
-
-
 
 // let hour1 = document.querySelector("#hourly1");
 // let hours1 = hour + 3;
@@ -98,4 +97,3 @@ function getForecast(city) {
 // hour5.innerHTML = `${hours5}:00`;
 
 searchCity("London");
-getForecast("London");

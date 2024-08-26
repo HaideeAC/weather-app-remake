@@ -121,8 +121,8 @@ input[type="text"] {
   text-align: center;
 }
 
-.forecast-temperatures {
-  margin-top: 10px;
+.forecast-icon {
+  width: 50px;
 }
 
 .higherTemp {

@@ -63,7 +63,7 @@ function getForecast(city) {
         forecastHtml +
         `<div class="forecast-daily">
     <div class="forecast-weekday">XxX</div>
-    <div class="forecast-icon">☀️</div> 
+    <div class="forecast-icon"><img src="${day.condition.icon_url}" /></div> 
     <div class="forecast-temperatures"
     <div class="higherTemp">
     ${Math.round(day.temperature.maximum)}º 

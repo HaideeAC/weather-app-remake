@@ -61,7 +61,6 @@ function formatHour(timestamp) {
   return date.getHours();
 }
 
-
 function getForecast(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=9453eocfb302f861c59f1e9f04d3bta4&units=metric`;
   axios.get(apiUrl).then(function displayForecast(response) {
@@ -71,7 +70,7 @@ function getForecast(city) {
 
     let forecastHtml = "";
     response.data.daily.forEach(function (day, index) {
-      if (index < 5) {
+      if (index > 0 && index < 6) {
         forecastHtml =
           forecastHtml +
           `<div class="forecast-daily">

@@ -55,6 +55,13 @@ function formatDay(timestamp) {
   return days[date.getDay()];
 }
 
+function formatHour(timestamp) {
+  let mph = 60 * 60 * 1000;
+  let date = new Date(timestamp + 3 * mph);
+  return date.getHours();
+}
+
+
 function getForecast(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=9453eocfb302f861c59f1e9f04d3bta4&units=metric`;
   axios.get(apiUrl).then(function displayForecast(response) {
@@ -80,27 +87,29 @@ function getForecast(city) {
     });
 
     forecast.innerHTML = forecastHtml;
+
+    let hourlyForecast = document.querySelector("#hourlyForecast");
+
+    let forecastHtml2 = "";
+    response.data.daily.forEach(function (day, index) {
+      if (index < 5) {
+        forecastHtml2 += `<div class="hourly">
+              <div id="hourly">${formatHour(day.time)}:00</div>
+              <div ><img src="${
+                day.condition.icon_url
+              }" class="forecast-icon" /></div>
+              <div class="higherTemp">
+                ${Math.round(day.temperature.maximum)}º
+                <span class="lowerTemp">${Math.round(
+                  day.temperature.minimum
+                )}º</span>
+              </div>
+            </div>`;
+      }
+    });
+
+    hourlyForecast.innerHTML = forecastHtml2;
   });
 }
-
-// let hour1 = document.querySelector("#hourly1");
-// let hours1 = hour + 3;
-// hour1.innerHTML = `${hours1}:00`;
-
-// let hour2 = document.querySelector("#hourly2");
-// let hours2 = hour + 6;
-// hour2.innerHTML = `${hours2}:00`;
-
-// let hour3 = document.querySelector("#hourly3");
-// let hours3 = hour + 9;
-// hour3.innerHTML = `${hours3}:00`;
-
-// let hour4 = document.querySelector("#hourly4");
-// let hours4 = hour + 12;
-// hour4.innerHTML = `${hours4}:00`;
-
-// let hour5 = document.querySelector("#hourly5");
-// let hours5 = hour + 15;
-// hour5.innerHTML = `${hours5}:00`;
 
 searchCity("London");

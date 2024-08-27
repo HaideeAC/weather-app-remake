@@ -49,6 +49,12 @@ let minutes = now.getMinutes().toString().padStart(2, "0");
 date.innerHTML = `${day} ${hour}:${minutes}`;
 
 //forecast
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[date.getDay()];
+}
+
 function getForecast(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=9453eocfb302f861c59f1e9f04d3bta4&units=metric`;
   axios.get(apiUrl).then(function displayForecast(response) {
@@ -56,13 +62,13 @@ function getForecast(city) {
 
     let forecast = document.querySelector("#forecast");
 
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     let forecastHtml = "";
-    response.data.daily.forEach(function (day) {
-      forecastHtml =
-        forecastHtml +
-        `<div class="forecast-daily">
-    <div class="forecast-weekday">XxX</div>
+    response.data.daily.forEach(function (day, index) {
+      if (index < 5) {
+        forecastHtml =
+          forecastHtml +
+          `<div class="forecast-daily">
+    <div class="forecast-weekday">${formatDay(day.time)}</div>
     <div ><img src="${day.condition.icon_url}" class="forecast-icon" /></div> 
     <div class="forecast-temperatures"
     <div class="higherTemp">
@@ -70,6 +76,7 @@ function getForecast(city) {
     <span class="lowerTemp">${Math.round(day.temperature.minimum)}º</span></div>
     </div>
     </div>`;
+      }
     });
 
     forecast.innerHTML = forecastHtml;

@@ -55,12 +55,6 @@ function formatDay(timestamp) {
   return days[date.getDay()];
 }
 
-// function formatHour(timestamp) {
-//   let mph = 60 * 60 * 1000;
-//   let date = new Date(timestamp + 3 * mph);
-//   console.log(date.getHours());
-// }
-
 function getForecast(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=9453eocfb302f861c59f1e9f04d3bta4&units=metric`;
   axios.get(apiUrl).then(function displayForecast(response) {
@@ -86,28 +80,6 @@ function getForecast(city) {
     });
 
     forecast.innerHTML = forecastHtml;
-
-    // let hourlyForecast = document.querySelector("#hourlyForecast");
-
-    // let forecastHtml2 = "";
-    // response.data.daily.forEach(function (day, index) {
-    //   if (index < 5) {
-    //     forecastHtml2 += `<div class="hourly">
-    //           <div id="hourly">${formatHour(day.time)}:00</div>
-    //           <div ><img src="${
-    //             day.condition.icon_url
-    //           }" class="forecast-icon" /></div>
-    //           <div class="higherTemp">
-    //             ${Math.round(day.temperature.maximum)}º
-    //             <span class="lowerTemp">${Math.round(
-    //               day.temperature.minimum
-    //             )}º</span>
-    //           </div>
-    //         </div>`;
-    //   }
-    // });
-
-    // hourlyForecast.innerHTML = forecastHtml2;
   });
 }
 

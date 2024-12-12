@@ -2,14 +2,18 @@ body {
   font-family: "Chakra Petch", sans-serif;
   font-weight: 300;
   font-style: normal;
-  background: rgb(247, 241, 229);
-  height: 100vh;
+  background-color: rgb(247, 241, 229);
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+.image {
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
 .wrapper {
   color: rgb(76, 75, 22);
   height: 100vh;
@@ -17,6 +21,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-content: center;
+  position: relative;
 }
 
 .allBox {
@@ -136,8 +141,12 @@ input[type="text"] {
 footer {
   padding-bottom: 20px;
   text-align: center;
+  color: white;
 }
 
 a {
   color: rgb(137, 129, 33);
+}
+a:hover {
+  color: rgb(234, 219, 53);
 }

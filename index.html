@@ -14,59 +14,64 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="allBox">
-        <div class="searchBox">
-          <form action="" id="search-form">
-            <input
-              type="text"
-              id="input-box"
-              class="inputBox"
-              placeholder="Enter city.."
-              required
-            />
-            <input
-              type="submit"
-              id="input-button"
-              class="inputButton"
-              value="Search"
-            />
-          </form>
-        </div>
-        <div class="weatherBox">
-          <div class="info">
-            <div class="infobox1">
-              <h1 class="box1" id="city"></h1>
-              <p class="box2">
-                <span id="date"></span>,
-                <span id="descr">scattered clouds</span>
-                <br />
-                Humidity:
-                <span class="higherTemp"> <span id="humidity"></span>%</span>
-                Wind:
-                <span class="higherTemp"><span id="wind"></span>km/h</span>
-              </p>
-            </div>
-            <div class="infobox2">
-              <div id="mainIcon"></div>
-              <div class="infobox2temp" id="current-temp"></div>
-              <div class="infobox2unit">ºC</div>
-            </div>
+    <div class="container">
+      <img src="/images/pic.jpg" class="image">
+      <div class="wrapper">
+        <div class="allBox">
+          <div class="searchBox">
+            <form action="" id="search-form">
+              <input
+                type="text"
+                id="input-box"
+                class="inputBox"
+                placeholder="Enter city.."
+                required
+              />
+              <input
+                type="submit"
+                id="input-button"
+                class="inputButton"
+                value="Search"
+              />
+            </form>
           </div>
-          <div class="hourlyTemp" id="hourlyForecast"></div>
+          <div class="weatherBox">
+            <div class="info">
+              <div class="infobox1">
+                <h1 class="box1" id="city"></h1>
+                <p class="box2">
+                  <span id="date"></span>,
+                  <span id="descr">scattered clouds</span>
+                  <br />
+                  Humidity:
+                  <span class="higherTemp"> <span id="humidity"></span>%</span>
+                  Wind:
+                  <span class="higherTemp"><span id="wind"></span>km/h</span>
+                </p>
+              </div>
+              <div class="infobox2">
+                <div id="mainIcon"></div>
+                <div class="infobox2temp" id="current-temp"></div>
+                <div class="infobox2unit">ºC</div>
+              </div>
+            </div>
+            <div class="hourlyTemp" id="hourlyForecast"></div>
+          </div>
+          <div class="forecastBox" id="forecast"></div>
         </div>
-        <div class="forecastBox" id="forecast"></div>
+        <footer>
+          Coded by
+          <a href="https://github.com/HaideeAC" target="_blank">Haidee</a>
+          , is hosted on
+          <a
+            href="https://github.com/HaideeAC/weather-app-remake"
+            target="_blank"
+            >GitHub</a
+          >
+          and
+          <a href="https://haweatherapp.netlify.app" target="_blank">Netlify</a>
+        </footer>
       </div>
-      <footer>
-        Coded by
-        <a href="https://github.com/HaideeAC" target="_blank">Haidee</a>
-        , is hosted on
-        <a href="https://github.com/HaideeAC/weather-app-remake" target="_blank"
-          >GitHub</a
-        >
-        and
-        <a href="https://haweatherapp.netlify.app" target="_blank">Netlify</a>
-      </footer>
     </div>
     <script src="src/index.js"></script>
   </body>
